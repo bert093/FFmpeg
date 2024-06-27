@@ -1,0 +1,5 @@
+ffmpeg -i input.mp4 output_%04d.jpg
+
+extract all frames as jpg files
+
+$04d untuk input semua gambar yang 4 digit contoh pada skenario ini gunakan angka mulai dari 0001 0002 0003 0004 hingga seterusnya

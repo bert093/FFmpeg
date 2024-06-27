@@ -1,0 +1,32 @@
+#-ar for change the sample rate
+#-b:a untuk mengubah bitratenya
+#-c:a untuk menentukan apa audio codenya
+Trancoding: Konversi dari format ke format lainnya.
+biasanya codec format dalam audio tersebut disebut dengan encoder di ffmpeg.
+
+1. wav ke flac
+
+#16-bit, 44.1 kHz FLAC:
+ffmpeg -i input.wav -af aformat=s16:44100 output.flac
+
+#24-bit, 176.4 kHz FLAC (padded to 32-bit):
+ffmpeg -i input.wav -af aformat=s32:176000 output.flac
+
+2. wav ke aac {Containernya adalah m4a yang terdiri dari aac, alac, dan aiff} semua dibuat oleh pihak apple
+
+aac: advanced audio codec
+aac lc: advanced audio codec low complexity
+alac: apple lossless audio codec
+aiff: audio interchange file format
+
+#-acodec libfdk_aac: Sets the audio codec to Fraunhofer FDK AAC, which is currently the highest-quality AAC encoder available with FFmpeg.
+ffmpeg -i input.wav -acodec libfdk_aac output.aac {ITS BUG DONT TRY}
+ffmpeg -i input.wav -c:a aac -b:a 128k -ar 48000 output.aac
+
+3. wav to ogg {REMEMBER ITS CONTAINER} [opus and vorbis]
+ffmpeg -i input.wav -c:a libopus -b:a 320k -ar 48000 outputopus.ogg // OPUS
+ffmpeg -i input.wav -c:a libvorbis -b:a 320k -ar 48000 outputvorbis.ogg // VORBIS
+
+4. wav to mp3
+bisa langsung gunakan ini pada bagian -c:a mp3
+ffmpeg -i input.wav -c:a libmp3lame -b:a 128k output.mp3

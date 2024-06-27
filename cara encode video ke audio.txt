@@ -1,0 +1,9 @@
+#FFmpeg
+</ -ac untuk mengubah channel (saluran audio) dalam audionya
+</ -vn ffmpeg hanya akan memproses audio dari file input tersebut dan tidak akan memasukkan video ke dalam output.
+ffmpeg -i video_file -vn -ac 2 -c:a libvorbis -b:a 128k outputvorbis128k.ogg  // bisa pakai -q:a dari satu sampai 10, contoh: -q:a 5
+
+No Transcoding:
+hanya berlaku jika codec audio pada videonya adalah aac, dan seterusnya.
+mirip seperti video to audio (tapi tanpa kehilangan dan tanpa kompresi bitrate aslinya) 
+ffmpeg -i video_file.aac -vn -ac 2 output.aac
