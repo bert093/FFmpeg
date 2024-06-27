@@ -1,3 +1,4 @@
+sangat berguna jika video tersebut ingin dijadikan foto atau gambar (yang sangat banyak) atau di edit langsung frame tertentu dengan format tertentu.
 ffmpeg -i input.mp4 output_%04d.jpg
 
 extract all frames as jpg files

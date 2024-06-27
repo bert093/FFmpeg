@@ -1,3 +1,4 @@
+menggunakan frame (bingkai) yang ada untuk pembuatan video (pertama kali coba mind blowing)
 ffmpeg -r 24 -i output_%04d.png tovideos.mp4
 
 -r 24 untuk atur berapa framerates
