@@ -1,1 +1,0 @@
-ffmpeg -i BlueArchiveOST222.mp4 -vn -ac 2 -acodec mp3 -b:a 320k output320kmp3.mp3
